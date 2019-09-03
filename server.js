@@ -46,7 +46,7 @@ app.post('/addnewtask', function (req, res) {
 });
 
 app.get('/gettasks', function (req, res) {
-    db.collection('task').find({}).toArray(function (err, data) {
+    db.collectio ('task').find({}).toArray(function (err, data) {
         res.render('listtasks', { tasksDb: data });
     });
 });
