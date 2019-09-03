@@ -16,6 +16,7 @@ app.use(express.static('images'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(morgan('common'));
 app.listen(8080);
+//sasfaafawf
 
 const MongoClient = mongodb.MongoClient;
 
@@ -42,14 +43,16 @@ app.post('/addnewtask', function (req, res) {
     let taskDetails = req.body;
     taskid=Math.round(Math.random()*1000000);
     db.collection('task').insertOne({TaskID:taskid,Taskname: taskDetails.taskname, assign_to: taskDetails.assignto, Due_date: taskDetails.duedate,task_status: taskDetails.taskstatus,task_description: taskDetails.taskdescription});
-    res.redirect('/gettasks'); // redirect the client to list users page
+    res.redirect('/gettasks'); // redirect client to list users page
 });
 
 app.get('/gettasks', function (req, res) {
-    db.collectio ('task').find({}).toArray(function (err, data) {
+    db.collection ('task').find({}).toArray(function (err, data) {
         res.render('listtasks', { tasksDb: data });
     });
 });
+//dsafsdfsafsfsf
+//dsfjslakjflsjfs
 
 app.get('/updatetask', function (req, res) {
     res.sendFile(__dirname + '/views/updatetask.html');
@@ -109,3 +112,11 @@ app.post('/insertManydata', function (req, res) {
         
     res.redirect('/gettasks'); // redirect the client to list users page
 });
+//tryrtrytryrtyrtyrtrytry
+
+
+
+//
+
+//loganloganlogangloangloganlogan
+//hahahahaah
